@@ -46,6 +46,7 @@ public class Jpa {
 
     try (Session session = sessionFactory.openSession()) {
       // jql java query language
+      // select id, name from users where id >= 1
       List<User> users = session.createQuery("select u from User u where id >= 1 order by id desc", User.class)
         .getResultList();
 

@@ -12,7 +12,7 @@ public class Jdbc {
     // JDBC Java DataBase Connectivity - набора классов в стандартной библиотеке,
     // которая предназначена для работы с реляционными БД
 
-
+ 
     // java.sql.Driver
     Connection connection = DriverManager.getConnection("jdbc:h2:mem:database.db");
     prepareTables(connection);
@@ -54,7 +54,7 @@ public class Jdbc {
   private static void prepareTables(Connection connection) throws SQLException {
     try (Statement statement = connection.createStatement()) {
       statement.execute("""
-        create table users (
+        create table  users (
           id bigint,
           name varchar(255)
         )

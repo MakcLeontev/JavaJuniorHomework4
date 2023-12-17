@@ -5,19 +5,22 @@
 <!-- Version 8 MySQL hiberante-cfg.xml example for Hibernate 5 -->
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.driver_class">org.h2.Driver</property>
-        <property name="connection.url">jdbc:h2:mem:database</property>
-        <property name="connection.username">sa</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <!--<property name="connection.driver_class">org.h2.Driver</property>-->
+        <property name="connection.url">jdbc:sqlite:sample.db</property>
+        <!--<property name="connection.url">jdbc:h2:mem:database</property>-->
+        <property name="connection.username"></property>
         <property name="connection.password"></property>
-
-        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
-        <!-- create create-drop update validate-->
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- <property name="dialect">org.hibernate.dialect.H2Dialect</property>-->
+         <!-- create create-drop update validate-->
+        <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.connection.isolation">2</property>
 
         <!--        <property name="show_sql">true</property>-->
         <!--        <property name="format_sql">true</property>-->
 
-        <mapping class="ru.gb.lesson4.User"/>
+<!--        <mapping class="ru.gb.lesson4.User"/>-->
+        <mapping class="ru.gb.lesson4.hw.Book"/>
     </session-factory>
 </hibernate-configuration>
